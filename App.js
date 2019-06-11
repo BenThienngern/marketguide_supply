@@ -14,6 +14,7 @@ import AlbumList from './src/components/AlbumList';
 import Auth from './src/Auth';
 import Search from './src/components/Search';
 
+// TEST
 export default class App extends Component {
   state = {
     index: 0,
