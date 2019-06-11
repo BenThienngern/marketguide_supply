@@ -65,6 +65,7 @@ const HomeRoute = () => (
               uri:
                 'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
             }}
+            onPress={() => this}
           >
             <Text style={styles.InnerText}>RESTAURANTS</Text>
           </ImageBackground>
