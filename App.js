@@ -7,10 +7,20 @@
  */
 
 import React, { Component } from 'react';
-import { View, StyleSheet, ImageBackground, Text, ScrollView } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ImageBackground,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import { BottomNavigation, Title } from 'react-native-paper';
+import ListView from './src/components/ListView';
 import HeadBanner from './src/components/HeadBanner';
 import AlbumList from './src/components/AlbumList';
+import PromotionCard from './src/components/PromotionCard';
+import CategoriesCard from './src/components/CategoriesCard';
 import Auth from './src/Auth';
 import Search from './src/components/Search';
 
@@ -60,88 +70,102 @@ const HomeRoute = () => (
       <View style={{ padding: 16 }}>
         <Title>Top Categories in Chiangmai</Title>
         <View style={{ flexDirection: 'row' }}>
-          <ImageBackground
-            style={styles.CategorieImageRest}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-            onPress={() => this}
-          >
-            <Text style={styles.InnerText}>RESTAURANTS</Text>
-          </ImageBackground>
-          <ImageBackground
-            style={styles.CategorieImageRest}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
-            <Text style={styles.InnerText}>SHOPS</Text>
-          </ImageBackground>
+          <CategoriesCard
+            text="RESTAURANTS"
+            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+          />
+          <CategoriesCard
+            text="SHOPS"
+            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+          />
         </View>
       </View>
       <View style={{ paddingLeft: 16, paddingTop: 2 }}>
         <Title>Zones</Title>
         <View>
-          <ImageBackground
-            style={styles.zonesImage}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
+          <TouchableOpacity>
             <View>
-              <Text style={styles.textOnImage}>Chiang Mai</Text>
-              <View style={[styles.zonesText, { flex: 1 }]} />
+              <ImageBackground
+                style={styles.zonesImage}
+                source={{
+                  uri:
+                    'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
+                }}
+              >
+                <View>
+                  <Text style={styles.textOnImage}>Chiang Mai</Text>
+                  <View style={[styles.zonesText, { flex: 1 }]} />
+                </View>
+              </ImageBackground>
             </View>
-          </ImageBackground>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={{ padding: 16 }}>
-        <Title>Promotions</Title>
+        <View
+          style={{
+            flexDirection: 'row',
+            flex: 1,
+            justifyContent: 'space-between',
+          }}
+        >
+          <Title>Promotions</Title>
+          <TouchableOpacity
+            style={{ justifyContent: 'center', alignContent: 'flex-end' }}
+          >
+            <Text style={{ color: 'purple', fontSize: 17 }}>See All></Text>
+          </TouchableOpacity>
+        </View>
         <View style={{ flexDirection: 'row' }}>
-          <ImageBackground
-            style={styles.CategorieImagePro}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
-            <Text style={styles.PromoText}>Promotion</Text>
-          </ImageBackground>
-          <ImageBackground
-            style={styles.CategorieImagePro}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
-            <Text style={styles.PromoText}>Promotion</Text>
-          </ImageBackground>
+          <PromotionCard
+            text="Promotion"
+            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+          />
+          <PromotionCard
+            text="Promotion"
+            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+          />
         </View>
       </View>
       <View style={{ padding: 16 }}>
-        <Title>Recommended Stores</Title>
+        <View
+          style={{
+            flexDirection: 'row',
+            flex: 1,
+            justifyContent: 'space-between',
+          }}
+        >
+          <Title>Recommended Stores</Title>
+          <TouchableOpacity
+            style={{ justifyContent: 'center', alignContent: 'flex-end' }}
+          >
+            <Text style={{ color: 'purple', fontSize: 17 }}>See All></Text>
+          </TouchableOpacity>
+        </View>
+
         <View style={{ flexDirection: 'row' }}>
-          <ImageBackground
-            style={styles.CategorieImageRest}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
-            {/* <Text style={styles.InnerText}>RESTAURANTS</Text> */}
-          </ImageBackground>
-          <ImageBackground
-            style={styles.CategorieImageRest}
-            source={{
-              uri:
-                'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-            }}
-          >
-            {/* <Text style={styles.InnerText}>SHOPS</Text> */}
-          </ImageBackground>
+          <ScrollView horizontal>
+            <ListView
+              text="Star Brandname"
+              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+            />
+            <ListView
+              text="GYPSO"
+              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+            />
+            <ListView
+              text="PRA TAILORS"
+              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+            />
+            <ListView
+              text="ATM TEA BAR"
+              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+            />
+            <ListView
+              text="DV Shop at Ratta..."
+              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+            />
+          </ScrollView>
         </View>
       </View>
       <Text style={styles.EmptySpace}>, </Text>
@@ -190,13 +214,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F0F9FF',
   },
-  CategorieImageRest: {
+  CategorieImageRec: {
     flex: 1,
     // marginTop: -6,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 120,
-    width: 180,
+    height: 130,
+    width: 160,
   },
   HomePage: {
     flex: 1,
@@ -223,6 +247,15 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     backgroundColor: 'rgba(52, 52, 52, 0.6)',
+  },
+  textOnRec: {
+    flex: 70,
+    flexDirection: 'row',
+    fontSize: 18,
+    color: 'white',
+    fontWeight: 'bold',
+    backgroundColor: 'rgba(52, 52, 52, 0.6)',
+    marginTop: 100,
   },
   CategorieImagePro: {
     flex: 1,
