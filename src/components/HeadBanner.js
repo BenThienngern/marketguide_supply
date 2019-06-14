@@ -22,7 +22,7 @@ const Header = (props) => {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#A9DFBF',
+    backgroundColor: '#6C23C6',
     justifyContent: 'center',
     alignItems: 'center',
     height: 80,
@@ -35,12 +35,15 @@ const styles = {
   },
   textStyle: {
     fontSize: 22,
+    color: 'white',
+    fontWeight: 'bold',
   },
   fab: {
     position: 'absolute',
     margin: 16,
     right: 0,
-    bottom: -11,
+    bottom: -10,
+    backgroundColor: '#6C23C6',
   },
 };
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, View, Image, Linking } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { Title } from 'react-native-paper';
-import { Card, CardSection, Button } from './common';
+// import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Card, CardSection } from './common';
 
 const AlbumDetail = ({ album }) => {
   const { image } = album;
@@ -15,31 +17,23 @@ const AlbumDetail = ({ album }) => {
   } = styles;
 
   return (
-    <Card>
-      <CardSection>
-        <View style={thumbnailContainerStyle}>
-          <Image style={thumbnailStyle} source={{ uri: image }} />
-        </View>
-        {/* <View style={headerContentStyle}> */}
-        <Title style={headerTextStyle}>{album.lang.en.name}</Title>
-        {/* </View> */}
-        <View>
-          <Text>{album.lang.en.description}</Text>
-        </View>
-      </CardSection>
-      {/* <CardSection> */}
-      {/* <Image style={imageStyle} source={{ uri: image }} /> */}
-      {/* </CardSection> */}
-      <CardSection>
-        <View style={{ flex: 1 }}>
-          <Button
-            color="#D5D8DC"
-            onPress={() => Linking.openURL()}
-            textMessage="More Info"
-          />
-        </View>
-      </CardSection>
-    </Card>
+    <TouchableOpacity>
+      <Card>
+        <CardSection>
+          <View style={thumbnailContainerStyle}>
+            <Image style={thumbnailStyle} source={{ uri: image }} />
+          </View>
+          <View style={{ flex: 1, margin: 8 }}>
+            <Title style={headerTextStyle}>{album.lang.en.name}</Title>
+            <Text>{album.lang.en.description}</Text>
+            <Icon ios="albums" size={30} color="#4F8EF7" />
+          </View>
+          {/* <View style={{ flex: 1 }}>
+            <Text>{album.lang.en.description}</Text>
+          </View> */}
+        </CardSection>
+      </Card>
+    </TouchableOpacity>
   );
 };
 
@@ -49,17 +43,20 @@ const styles = {
   },
   headerTextStyle: {
     fontSize: 18,
-    marginLeft: 19,
+
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   thumbnailStyle: {
-    height: 125,
-    width: 125,
+    height: 140,
+    width: 140,
   },
   thumbnailContainerStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 10,
-    marginRight: 10,
+    // marginLeft: 10,
+    // marginRight: 10,
+    padding: 2,
   },
   imageStyle: {
     height: 600,

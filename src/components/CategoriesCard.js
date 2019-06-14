@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, ImageBackground, View, TouchableOpacity } from 'react-native';
 
 const CategoriesCard = ({ text, url }) => (
-  <TouchableOpacity>
+  <TouchableOpacity style={{ padding: 4 }}>
     <View>
       <ImageBackground
         style={styles.CategorieImageRest}

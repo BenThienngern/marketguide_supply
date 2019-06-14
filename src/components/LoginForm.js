@@ -53,7 +53,11 @@ class LoginForm extends Component {
     }
 
     return (
-      <Button style={{ flex: 1 }} onPress={this.onButtonPress} textMessage="Log In" />
+      <Button
+        style={{ flex: 1 }}
+        onPress={this.onButtonPress}
+        textMessage="Log In or Sign up"
+      />
     );
   }
 

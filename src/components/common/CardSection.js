@@ -9,7 +9,7 @@ const styles = {
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#CAE3F3',
+    backgroundColor: 'white',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     borderColor: '#ddd',

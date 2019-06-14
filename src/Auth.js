@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'firebase';
-import { Header, Button, Spinner } from './components/common';
+import { Button, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class Auth extends Component {
@@ -45,8 +45,7 @@ class Auth extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <Header headerText="Authentication" />
-        <View style={{ height: 50 }}>{this.renderContent()}</View>
+        <View>{this.renderContent()}</View>
       </View>
     );
   }
