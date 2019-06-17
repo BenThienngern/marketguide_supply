@@ -21,6 +21,7 @@ import HeadBanner from './src/components/HeadBanner';
 import AlbumList from './src/components/AlbumList';
 import PromotionCard from './src/components/PromotionCard';
 import CategoriesCard from './src/components/CategoriesCard';
+import StoreFront from './src/components/StoreFront';
 import Auth from './src/Auth';
 import Search from './src/components/Search';
 
@@ -49,13 +50,14 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1 }}>
         <BottomNavigation
+          activeColor="#A321BD"
           navigationState={this.state}
           onIndexChange={this.handleIndexChange}
           renderScene={this.renderScene}
           barStyle={{
-            backgroundColor: '#82E0AA',
+            backgroundColor: 'white',
             shadowOffset: { width: 0, height: 5 },
-            shadowOpacity: 0.7,
+            shadowOpacity: 0.8,
           }}
         />
       </View>
@@ -196,7 +198,12 @@ const ListRoute = () => (
 
 const MapRoute = () => (
   <View>
-    <HeadBanner headerText={'Map'} />
+    <View>
+      <HeadBanner headerText={'Map'} />
+    </View>
+    <View>
+      <StoreFront />
+    </View>
   </View>
 );
 
