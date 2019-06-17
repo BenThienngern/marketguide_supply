@@ -2,7 +2,8 @@ import React from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { Title } from 'react-native-paper';
 // import { Icon } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import ReviewCard from './ReviewCard';
 import { Card, CardSection } from './common';
 
 const AlbumDetail = ({ album }) => {
@@ -27,6 +28,9 @@ const AlbumDetail = ({ album }) => {
             <Title style={headerTextStyle}>{album.lang.en.name}</Title>
             <Text>{album.lang.en.description}</Text>
             <Icon ios="albums" size={30} color="#4F8EF7" />
+            <View>
+              <ReviewCard icon="star" />
+            </View>
           </View>
           {/* <View style={{ flex: 1 }}>
             <Text>{album.lang.en.description}</Text>

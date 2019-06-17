@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { BottomNavigation, Title } from 'react-native-paper';
+import { Rating, AirbnbRating } from 'react-native-elements';
 import ListView from './src/components/ListView';
 import HeadBanner from './src/components/HeadBanner';
 import AlbumList from './src/components/AlbumList';
@@ -203,6 +204,39 @@ const MapRoute = () => (
     </View>
     <View>
       <StoreFront />
+    </View>
+    <View>
+      <AirbnbRating />
+      <AirbnbRating
+        count={11}
+        reviews={[
+          'Terrible',
+          'Bad',
+          'Meh',
+          'OK',
+          'Good',
+          'Hmm...',
+          'Very Good',
+          'Wow',
+          'Amazing',
+          'Unbelievable',
+          'Jesus',
+        ]}
+        defaultRating={11}
+        size={20}
+      />
+      <Rating
+        showRating
+        onFinishRating={this.ratingCompleted}
+        style={{ paddingVertical: 10 }}
+      />
+      <Rating
+        type="heart"
+        ratingCount={3}
+        imageSize={60}
+        showRating
+        onFinishRating={this.ratingCompleted}
+      />
     </View>
   </View>
 );
