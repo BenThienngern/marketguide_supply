@@ -17,9 +17,9 @@ class StoreFront extends Component {
   handleIndexChange = (index) => this.setState({ index });
 
   renderScene = BottomNavigation.SceneMap({
-    detail: MusicRoute,
-    promotion: AlbumsRoute,
-    map: RecentsRoute,
+    detail: DetailRoute,
+    promotion: PromotionRoute,
+    map: MapRoute,
   });
 
   render() {
@@ -50,11 +50,11 @@ class StoreFront extends Component {
     );
   }
 }
-const MusicRoute = () => <Text>Music</Text>;
+const DetailRoute = () => <Text>Music</Text>;
 
-const AlbumsRoute = () => <Text>Albums</Text>;
+const PromotionRoute = () => <Text>Albums</Text>;
 
-const RecentsRoute = () => <Text>Recents</Text>;
+const MapRoute = () => <Text>Recents</Text>;
 
 export default StoreFront;
 

@@ -8,7 +8,7 @@ const ReviewCard = (props) => (
       <Icon name={props.icon} size={22} style={styles.iconStyle} />
       <Text style={{ flex: 1 }}> 5.0</Text>
     </View>
-    <View style={{ flex: 3 }}>
+    <View style={{ flex: 3, paddingLeft: 16 }}>
       <Icon name="thumbs-up" size={30} color="grey" />
     </View>
   </View>
@@ -29,7 +29,7 @@ const styles = {
     elevation: 1,
     marginLeft: 3,
     marginRight: 3,
-    marginTop: 3,
+    marginTop: 5,
     height: 25,
     width: 45,
   },
