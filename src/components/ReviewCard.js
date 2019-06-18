@@ -3,13 +3,13 @@ import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const ReviewCard = (props) => (
-  <View>
+  <View style={{ flexDirection: 'row', flex: 1 }}>
     <View style={styles.containerStyle}>
       <Icon name={props.icon} size={22} style={styles.iconStyle} />
       <Text style={{ flex: 1 }}> 5.0</Text>
     </View>
-    <View>
-      <Icon ios="" size={30} color="#4F8EF7" />
+    <View style={{ flex: 3 }}>
+      <Icon name="thumbs-up" size={30} color="grey" />
     </View>
   </View>
 );

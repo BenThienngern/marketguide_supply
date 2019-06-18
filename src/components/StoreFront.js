@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { /*Text*/ View, ImageBackground /*TouchableOpacity*/ } from 'react-native';
 import { BottomNavigation, Text } from 'react-native-paper';
+import { AirbnbRating } from 'react-native-elements';
 import StoreHead from './StoreHead';
 
 class StoreFront extends Component {
@@ -34,6 +35,7 @@ class StoreFront extends Component {
           <View>
             <StoreHead />
           </View>
+          <AirbnbRating />
           <View style={{ flex: 1 }}>
             <ImageBackground
               style={styles.BackGround}

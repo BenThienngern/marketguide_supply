@@ -10,23 +10,19 @@ import React, { Component } from 'react';
 import {
   View,
   StyleSheet,
-  ImageBackground,
-  Text,
-  ScrollView,
-  TouchableOpacity,
+  // ImageBackground,
+  // Text,
+  // ScrollView,
+  // TouchableOpacity,
 } from 'react-native';
-import { BottomNavigation, Title } from 'react-native-paper';
-import { Rating, AirbnbRating } from 'react-native-elements';
-import ListView from './src/components/ListView';
+import { BottomNavigation } from 'react-native-paper';
 import HeadBanner from './src/components/HeadBanner';
 import AlbumList from './src/components/AlbumList';
-import PromotionCard from './src/components/PromotionCard';
-import CategoriesCard from './src/components/CategoriesCard';
-import StoreFront from './src/components/StoreFront';
-import Auth from './src/Auth';
 import Search from './src/components/Search';
+import HomeRoute from './src/route/routerStack/HomeRoute';
+import UserRoute from './src/route/routerStack/UserRoute';
+import MapRoute from './src/route/routerStack/MapRoute';
 
-// TEST
 export default class App extends Component {
   state = {
     index: 0,
@@ -41,10 +37,10 @@ export default class App extends Component {
   handleIndexChange = (index) => this.setState({ index });
 
   renderScene = BottomNavigation.SceneMap({
-    home: HomeRoute,
-    list: ListRoute,
-    map: MapRoute,
-    user: UserRoute,
+    home: HomeRoutes,
+    list: ListRoutes,
+    map: MapRoutes,
+    user: UserRoutes,
   });
 
   render() {
@@ -65,127 +61,11 @@ export default class App extends Component {
     );
   }
 }
-const HomeRoute = () => (
-  <View>
-    <HeadBanner headerText={'Home'} />
+const HomeRoutes = () => <HomeRoute />;
 
-    <ScrollView>
-      <View style={{ padding: 16 }}>
-        <Title>Top Categories in Chiangmai</Title>
-        <View style={{ flexDirection: 'row' }}>
-          <CategoriesCard
-            text="RESTAURANTS"
-            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-          />
-          <CategoriesCard
-            text="SHOPS"
-            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-          />
-        </View>
-      </View>
-      <View style={{ paddingLeft: 16, paddingTop: 2 }}>
-        <Title>Zones</Title>
-        <View>
-          <TouchableOpacity>
-            <View>
-              <ImageBackground
-                style={styles.zonesImage}
-                source={{
-                  uri:
-                    'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-                }}
-              >
-                <View>
-                  <Text style={styles.textOnImage}>Chiang Mai</Text>
-                  <View style={[styles.zonesText, { flex: 1 }]} />
-                </View>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={{ padding: 16 }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            flex: 1,
-            justifyContent: 'space-between',
-          }}
-        >
-          <Title>Promotions</Title>
-          <TouchableOpacity
-            style={{ justifyContent: 'center', alignContent: 'flex-end' }}
-          >
-            <Text style={{ color: 'purple', fontSize: 17 }}>See All></Text>
-          </TouchableOpacity>
-        </View>
-        <View style={{ flexDirection: 'row' }}>
-          <PromotionCard
-            text="Promotion"
-            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-          />
-          <PromotionCard
-            text="Promotion"
-            url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-          />
-        </View>
-      </View>
-      <View style={{ padding: 16 }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            flex: 1,
-            justifyContent: 'space-between',
-          }}
-        >
-          <Title>Recommended Stores</Title>
-          <TouchableOpacity
-            style={{ justifyContent: 'center', alignContent: 'flex-end' }}
-          >
-            <Text style={{ color: 'purple', fontSize: 17 }}>See All></Text>
-          </TouchableOpacity>
-        </View>
+const UserRoutes = () => <UserRoute />;
 
-        <View style={{ flexDirection: 'row' }}>
-          <ScrollView horizontal>
-            <ListView
-              text="Star Brandname"
-              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-            />
-            <ListView
-              text="GYPSO"
-              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-            />
-            <ListView
-              text="PRA TAILORS"
-              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-            />
-            <ListView
-              text="ATM TEA BAR"
-              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-            />
-            <ListView
-              text="DV Shop at Ratta..."
-              url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
-            />
-          </ScrollView>
-        </View>
-      </View>
-      <Text style={styles.EmptySpace}>, </Text>
-    </ScrollView>
-  </View>
-);
-
-const UserRoute = () => (
-  <View style={{ flex: 1 }}>
-    <View>
-      <HeadBanner headerText={'Log In'} />
-    </View>
-    <Auth />
-  </View>
-);
-
-const ListRoute = () => (
+const ListRoutes = () => (
   <View style={styles.ListBackground}>
     <View>
       <HeadBanner headerText={'Store List'} />
@@ -197,49 +77,7 @@ const ListRoute = () => (
   </View>
 );
 
-const MapRoute = () => (
-  <View>
-    <View>
-      <HeadBanner headerText={'Map'} />
-    </View>
-    <View>
-      <StoreFront />
-    </View>
-    <View>
-      <AirbnbRating />
-      <AirbnbRating
-        count={11}
-        reviews={[
-          'Terrible',
-          'Bad',
-          'Meh',
-          'OK',
-          'Good',
-          'Hmm...',
-          'Very Good',
-          'Wow',
-          'Amazing',
-          'Unbelievable',
-          'Jesus',
-        ]}
-        defaultRating={11}
-        size={20}
-      />
-      <Rating
-        showRating
-        onFinishRating={this.ratingCompleted}
-        style={{ paddingVertical: 10 }}
-      />
-      <Rating
-        type="heart"
-        ratingCount={3}
-        imageSize={60}
-        showRating
-        onFinishRating={this.ratingCompleted}
-      />
-    </View>
-  </View>
-);
+const MapRoutes = () => <MapRoute />;
 
 const styles = StyleSheet.create({
   container: {
