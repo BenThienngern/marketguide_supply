@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 import { FAB } from 'react-native-paper';
 
 const StoreHead = (props) => {
@@ -7,9 +7,17 @@ const StoreHead = (props) => {
 
   return (
     <View>
-      <View style={viewStyle}>
-        <Text style={textStyle}>{props.headerText}</Text>
-      </View>
+      <ImageBackground
+        style={viewStyle}
+        source={{
+          uri:
+            'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
+        }}
+      >
+        <View>
+          <Text style={textStyle}>{props.headerText}</Text>
+        </View>
+      </ImageBackground>
       <FAB
         icon="arrow-back"
         style={styles.fab}
@@ -22,7 +30,6 @@ const StoreHead = (props) => {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#6C23C6',
     justifyContent: 'center',
     alignItems: 'center',
     height: 80,

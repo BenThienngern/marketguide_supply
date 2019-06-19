@@ -5,7 +5,7 @@ import { Button, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class Auth extends Component {
-  state = { loggedIn: false };
+  state = { loggedIn: null };
 
   componentDidMount() {
     firebase.initializeApp({

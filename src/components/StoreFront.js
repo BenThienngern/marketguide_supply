@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { /*Text*/ View, ImageBackground /*TouchableOpacity*/ } from 'react-native';
+import { /*Text*/ View /*TouchableOpacity*/ } from 'react-native';
 import { BottomNavigation, Text } from 'react-native-paper';
 import { AirbnbRating } from 'react-native-elements';
 import StoreHead from './StoreHead';
@@ -26,35 +26,39 @@ class StoreFront extends Component {
     return (
       <View>
         <BottomNavigation
+          activeColor="#A321BD"
           navigationState={this.state}
           onIndexChange={this.handleIndexChange}
           renderScene={this.renderScene}
-          barstyle={styles.viewStyle}
+          // barstyle={styles.viewStyle}
         />
-        <View>
-          <View>
-            <StoreHead />
-          </View>
-          <AirbnbRating />
-          <View style={{ flex: 1 }}>
-            <ImageBackground
-              style={styles.BackGround}
-              source={{
-                uri:
-                  'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
-              }}
-            />
-          </View>
-        </View>
       </View>
     );
   }
 }
-const DetailRoute = () => <Text>Music</Text>;
+const DetailRoute = () => (
+  <View>
+    <View>
+      <StoreHead />
+    </View>
+    <View>
+      <AirbnbRating />
+      <View style={{ flex: 1 }} />
+    </View>
+  </View>
+);
 
-const PromotionRoute = () => <Text>Albums</Text>;
+const PromotionRoute = () => (
+  <View>
+    <StoreHead />
+  </View>
+);
 
-const MapRoute = () => <Text>Recents</Text>;
+const MapRoute = () => (
+  <View>
+    <StoreHead />
+  </View>
+);
 
 export default StoreFront;
 
