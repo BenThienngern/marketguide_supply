@@ -1,18 +1,14 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from './routerStack/HomeRoute';
-import StoreFrontScreen from '../components/StoreFront';
 import ListScreen from './routerStack/ListRoute';
+import StoreFrontScreen from '../components/StoreFront';
 
-const HomeRouter = createStackNavigator(
+const ListRouter = createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
+    List: {
+      screen: ListScreen,
     },
     StoreFont: {
       screen: StoreFrontScreen,
-    },
-    List: {
-      screen: ListScreen,
     },
   },
   {
@@ -23,4 +19,4 @@ const HomeRouter = createStackNavigator(
   },
 );
 
-export default createAppContainer(HomeRouter);
+export default createAppContainer(ListRouter);

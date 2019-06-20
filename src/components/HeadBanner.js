@@ -10,6 +10,9 @@ const Header = (props) => {
       <View style={viewStyle}>
         <Text style={textStyle}>{props.headerText}</Text>
       </View>
+      {props.isShowBackIcon ? (
+        <FAB icon="arrow-back" style={styles.fabs} small onPress={props.onClickBack} />
+      ) : null}
       <FAB
         style={styles.fab}
         small
@@ -31,7 +34,6 @@ const styles = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.5,
     elevation: 2,
-    position: 'relative',
   },
   textStyle: {
     fontSize: 22,
@@ -42,6 +44,13 @@ const styles = {
     position: 'absolute',
     margin: 16,
     right: 0,
+    bottom: -10,
+    backgroundColor: '#6C23C6',
+  },
+  fabs: {
+    position: 'absolute',
+    margin: 16,
+    left: 0,
     bottom: -10,
     backgroundColor: '#6C23C6',
   },

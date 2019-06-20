@@ -6,16 +6,21 @@ import AlbumList from '../../components/AlbumList';
 
 class ListRoute extends Component {
   render() {
+    console.log(this.props);
     return (
       <View style={{ flex: 1 }}>
         <View style={styles.ListBackground}>
           <View>
-            <HeadBanner headerText={'Store List'} />
+            <HeadBanner
+              onClickBack={() => this.props.navigation.goBack()}
+              isShowBackIcon
+              headerText={'Store List'}
+            />
           </View>
           <View style={styles.topbar}>
             <Search />
           </View>
-          <AlbumList />
+          <AlbumList {...this.props} />
         </View>
       </View>
     );

@@ -6,8 +6,13 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import ReviewCard from './ReviewCard';
 import { Card, CardSection } from './common';
 
-const AlbumDetail = ({ album }) => {
+const AlbumDetail = ({ album, navigation }) => {
   const { image } = album;
+
+  const onClickRecomendShop = (name) => {
+    navigation.navigate('StoreFont', { shopName: name });
+  };
+
   console.log(album);
   const {
     thumbnailContainerStyle,
@@ -18,7 +23,7 @@ const AlbumDetail = ({ album }) => {
   } = styles;
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => onClickRecomendShop(album.lang.en.name)}>
       <Card>
         <CardSection>
           <View style={thumbnailContainerStyle}>
