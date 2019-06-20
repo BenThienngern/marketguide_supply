@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { /*Text*/ View /*TouchableOpacity*/ } from 'react-native';
-import { BottomNavigation, Text } from 'react-native-paper';
+import { BottomNavigation } from 'react-native-paper';
 import { AirbnbRating } from 'react-native-elements';
 import StoreHead from './StoreHead';
 
@@ -62,21 +62,21 @@ const MapRoute = () => (
 
 export default StoreFront;
 
-const styles = {
-  BackGround: {
-    flexDirection: 'column',
-  },
-  viewStyle: {
-    backgroundColor: '#6C23C6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 80,
-    paddingTop: 30,
-    Opacity: 0.1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.5,
-    elevation: 2,
-    position: 'relative',
-  },
-};
+// const styles = {
+//   BackGround: {
+//     flexDirection: 'column',
+//   },
+//   viewStyle: {
+//     backgroundColor: '#6C23C6',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     height: 80,
+//     paddingTop: 30,
+//     Opacity: 0.1,
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 2 },
+//     shadowOpacity: 0.5,
+//     elevation: 2,
+//     position: 'relative',
+//   },
+// };
