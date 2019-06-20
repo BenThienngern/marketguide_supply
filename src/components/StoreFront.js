@@ -1,64 +1,82 @@
 import React, { Component } from 'react';
-import { /*Text*/ View /*TouchableOpacity*/ } from 'react-native';
-import { BottomNavigation } from 'react-native-paper';
-import { AirbnbRating } from 'react-native-elements';
-import StoreHead from './StoreHead';
+import { Text, View, TouchableOpacity } from 'react-native';
+// import { BottomNavigation } from 'react-native-paper';
+// import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+// import { AirbnbRating } from 'react-native-elements';
+// import StoreHead from './StoreHead';
+import NavTabs from './NavTabs';
 
-class StoreFront extends Component {
-  state = {
-    index: 0,
-    routes: [
-      { key: 'detail', title: 'Detail' },
-      { key: 'promotion', title: 'Promotion' },
-      { key: 'map', title: 'Map' },
-    ],
-  };
-
-  handleIndexChange = (index) => this.setState({ index });
-
-  renderScene = BottomNavigation.SceneMap({
-    detail: DetailRoute,
-    promotion: PromotionRoute,
-    map: MapRoute,
-  });
-
-  render() {
-    return (
-      <View>
-        <BottomNavigation
-          activeColor="#A321BD"
-          navigationState={this.state}
-          onIndexChange={this.handleIndexChange}
-          renderScene={this.renderScene}
-          // barstyle={styles.viewStyle}
-        />
-      </View>
-    );
-  }
-}
-const DetailRoute = () => (
+const StoreFront = ({ navigation }) => (
   <View>
+    <TouchableOpacity
+      style={{ marginTop: 50 }}
+      onPress={() => {
+        navigation.goBack();
+      }}
+    >
+      <Text>Go back</Text>
+    </TouchableOpacity>
     <View>
-      <StoreHead />
-    </View>
-    <View>
-      <AirbnbRating />
-      <View style={{ flex: 1 }} />
+      <NavTabs />
     </View>
   </View>
 );
 
-const PromotionRoute = () => (
-  <View>
-    <StoreHead />
-  </View>
-);
+// class StoreFront extends Component {
+//   state = {
+//     index: 0,
+//     routes: [
+//       { key: 'detail', title: 'Detail' },
+//       { key: 'promotion', title: 'Promotion' },
+//       { key: 'map', title: 'Map' },
+//     ],
+//   };
 
-const MapRoute = () => (
-  <View>
-    <StoreHead />
-  </View>
-);
+//   handleIndexChange = (index) => this.setState({ index });
+
+//   renderScene = BottomNavigation.SceneMap({
+//     detail: DetailRoute,
+//     promotion: PromotionRoute,
+//     map: MapRoute,
+//   });
+
+//   render() {
+//     return (
+//       <View>
+//         <BottomNavigation
+//           activeColor="#A321BD"
+//           navigationState={this.state}
+//           onIndexChange={this.handleIndexChange}
+//           renderScene={this.renderScene}
+//           // barstyle={styles.viewStyle}
+//         />
+//       </View>
+//     );
+//   }
+// }
+// const DetailRoute = () => (
+//   <View>
+//     <View>
+//       <StoreHead />
+//     </View>
+//     <View>
+//       <AirbnbRating />
+//       <View style={{ flex: 1 }} />
+//     </View>
+//   </View>
+// );
+
+// const PromotionRoute = () => (
+//   <View>
+//     <StoreHead />
+//   </View>
+// );
+
+// const MapRoute = () => (
+//   <View>
+//     <StoreHead />
+//   </View>
+// );
 
 export default StoreFront;
 

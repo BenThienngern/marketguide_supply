@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, ImageBackground, View, TouchableOpacity } from 'react-native';
 
-const ListView = ({ text, url }) => (
-  <TouchableOpacity>
+const ListView = ({ text, url, onClick }) => (
+  <TouchableOpacity onPress={onClick}>
     <View style={{ margin: 4 }}>
       <ImageBackground
         style={[styles.CategorieImageRec]}

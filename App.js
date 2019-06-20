@@ -8,7 +8,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { BottomNavigation } from 'react-native-paper';
-import HomeRoute from './src/route/routerStack/HomeRoute';
+import HomeRoute from './src/route/home';
 import MapRoute from './src/route/routerStack/MapRoute';
 import ListRoute from './src/route/routerStack/ListRoute';
 import UserRoute from './src/route/routerStack/UserRoute';
@@ -38,7 +38,6 @@ export default class App extends React.Component {
       <View style={{ flex: 1 }}>
         {/* <Text>asdasd</Text> */}
         <BottomNavigation
-          activeColor="#A321BD"
           navigationState={this.state}
           onIndexChange={this.handleIndexChange}
           renderScene={this.renderScene}
