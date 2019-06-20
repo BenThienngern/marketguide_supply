@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
-// import { BottomNavigation } from 'react-native-paper';
+import React from 'react';
+import { View } from 'react-native';
+// import { FAB } from 'react-native-paper';
 // import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
-// import { AirbnbRating } from 'react-native-elements';
-// import StoreHead from './StoreHead';
+import { AirbnbRating } from 'react-native-elements';
+import StoreHead from './StoreHead';
 import NavTabs from './NavTabs';
 
 const StoreFront = ({ navigation }) => (
   <View>
-    <TouchableOpacity
-      style={{ marginTop: 50 }}
-      onPress={() => {
-        navigation.goBack();
-      }}
-    >
-      <Text>Go back</Text>
-    </TouchableOpacity>
     <View>
       <NavTabs />
+    </View>
+    <View>
+      <View>
+        <StoreHead
+          headerText="Shope"
+          onClickBack={() => {
+            navigation.goBack();
+          }}
+        />
+      </View>
+      <View>
+        <AirbnbRating />
+        <View style={{ flex: 1 }} />
+      </View>
     </View>
   </View>
 );
