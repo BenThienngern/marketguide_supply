@@ -24,6 +24,7 @@ class HomeRoute extends React.Component {
   }
   componentWillMount() {
     this.getStoreFront();
+    console.disableYellowBox = true;
   }
   onClickRecomendShop = (name) => {
     console.log(name);
@@ -31,6 +32,9 @@ class HomeRoute extends React.Component {
   };
   onClickSeeAll = () => {
     this.props.navigation.navigate('List');
+  };
+  onClickZones = () => {
+    this.props.navigation.navigate('Map');
   };
 
   async getStoreFront() {
@@ -55,24 +59,24 @@ class HomeRoute extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <CategoriesCard
                 text="RESTAURANTS"
-                url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+                url="http://cdn.shopify.com/s/files/1/0065/4917/6438/products/outside-a-fancy-restaurant-background_ff1aca85-4d04-4ce8-9a4b-c9dc9a81729c_1200x1200.jpg?v=1549231065"
               />
               <CategoriesCard
                 text="SHOPS"
-                url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+                url="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg"
               />
             </View>
           </View>
           <View style={{ paddingLeft: 16, paddingTop: 2 }}>
             <Title>Zones</Title>
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this.onClickZones()}>
                 <View>
                   <ImageBackground
                     style={styles.zonesImage}
                     source={{
                       uri:
-                        'https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31',
+                        'https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=18.80329&lon=98.98108&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*',
                     }}
                   >
                     <View>
@@ -102,11 +106,15 @@ class HomeRoute extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <PromotionCard
                 text="Promotion"
-                url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+                url="https://api.thaimarket.guide/images/service/download/5bfb6e138882f90001d19bd4?"
+                dis="Test "
+                date="17 Jan - 17 Dec 2019"
               />
               <PromotionCard
                 text="Promotion"
-                url="https://api.thaimarket.guide/images/service/download/5c205bba70967d0001a9ba31"
+                url="https://api.thaimarket.guide/images/service/download/5c2064fb70967d0001a9ba41?"
+                dis="Test"
+                date="02 Feb - 19 Jun 2020"
               />
             </View>
           </View>

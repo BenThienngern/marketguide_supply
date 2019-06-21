@@ -9,7 +9,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { BottomNavigation } from 'react-native-paper';
 import HomeRoute from './src/route/home';
-import MapRoute from './src/route/routerStack/MapRoute';
+import MapRoute from './src/route/map';
 import ListRoute from './src/route/list';
 import UserRoute from './src/route/routerStack/UserRoute';
 

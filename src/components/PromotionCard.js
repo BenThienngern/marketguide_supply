@@ -1,30 +1,53 @@
 import React from 'react';
 import { Text, ImageBackground, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-const PromotionCard = ({ text, url }) => (
-  <TouchableOpacity>
+const PromotionCard = ({ url, text, dis, date }) => (
+  <TouchableOpacity style={styles.CardView}>
     <View>
+      {/* // <Card style={styles.CategorieImagePro}>
+      //   <Text style={styles.PromoText}>{text}</Text>
+      //   <View style={styles.user}>
+      //     <Image source={{ uri: url }} />
+      //     <Text style={styles.name}>{discription}</Text>
+      //   </View>
+      // </Card>  */}
       <ImageBackground
         style={styles.CategorieImagePro}
         source={{
           uri: url,
         }}
       >
-        <Text style={styles.PromoText}>{text}</Text>
+        <Text style={styles.PromoText}>Promotion</Text>
       </ImageBackground>
+      <View style={styles.TextBox}>
+        <View>
+          <Text style={styles.Text}> {text}</Text>
+          <Text style={styles.DisStyle}>{dis}</Text>
+        </View>
+        <View style={{ flexDirection: 'row', flex: 1, margin: 4 }}>
+          <Icon name="md-stopwatch" size={20} color="#252525" />
+          <Text style={{ margin: 4, color: '#64646A' }}>{date}</Text>
+        </View>
+      </View>
     </View>
   </TouchableOpacity>
 );
 
 export default PromotionCard;
 const styles = {
-  CategorieImagePro: {
-    flex: 1,
-    margin: 4,
+  CardView: {
+    borderWidth: 0.5,
+    borderRadius: 5,
+    margin: 6,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.4,
+    shadowOpacity: 0.5,
     shadowRadius: 2,
+    borderColor: '#CDCDCD',
+  },
+  CategorieImagePro: {
+    flex: 1,
     height: 180,
     width: 180,
   },
@@ -34,5 +57,21 @@ const styles = {
     backgroundColor: '#DF01D7',
     width: 85,
     fontWeight: 'bold',
+  },
+  TextBox: {
+    width: 180,
+    height: 100,
+    backgroundColor: 'white',
+  },
+  Text: {
+    color: '#2C2C2C',
+    fontSize: 17,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  DisStyle: {
+    color: '#6A6A6A',
+    fontWeight: 'bold',
+    marginLeft: 4,
   },
 };

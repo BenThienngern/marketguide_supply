@@ -2,9 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 import HeadBanner from '../../components/HeadBanner';
 
-const UserRoute = () => (
+const UserRoute = ({ navigation }) => (
   <View>
-    <HeadBanner headerText={'Map'} />
+    <HeadBanner
+      headerText={'Map'}
+      isShowBackIcon
+      onClickBack={() => navigation.goBack()}
+    />
   </View>
 );
 
