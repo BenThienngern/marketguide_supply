@@ -36,6 +36,12 @@ class HomeRoute extends React.Component {
   onClickZones = () => {
     this.props.navigation.navigate('Map');
   };
+  onClickPromotionI = () => {
+    this.props.navigation.navigate('Promotion');
+  };
+  onClickPromotionII = () => {
+    this.props.navigation.navigate('PromotionI');
+  };
 
   async getStoreFront() {
     await axios
@@ -104,18 +110,22 @@ class HomeRoute extends React.Component {
               </TouchableOpacity>
             </View>
             <View style={{ flexDirection: 'row' }}>
-              <PromotionCard
-                text="Promotion"
-                url="https://api.thaimarket.guide/images/service/download/5bfb6e138882f90001d19bd4?"
-                dis="Test "
-                date="17 Jan - 17 Dec 2019"
-              />
-              <PromotionCard
-                text="Promotion"
-                url="https://api.thaimarket.guide/images/service/download/5c2064fb70967d0001a9ba41?"
-                dis="Test"
-                date="02 Feb - 19 Jun 2020"
-              />
+              <TouchableOpacity onPress={() => this.onClickPromotionI()}>
+                <PromotionCard
+                  text="Promotion"
+                  url="https://api.thaimarket.guide/images/service/download/5bfb6e138882f90001d19bd4?"
+                  dis="Test "
+                  date="17 Jan - 17 Dec 2019"
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => this.onClickPromotionII()}>
+                <PromotionCard
+                  text="Promotion"
+                  url="https://api.thaimarket.guide/images/service/download/5c2064fb70967d0001a9ba41?"
+                  dis="Test"
+                  date="02 Feb - 19 Jun 2020"
+                />
+              </TouchableOpacity>
             </View>
           </View>
           <View style={{ padding: 16 }}>

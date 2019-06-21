@@ -1,37 +1,35 @@
 import React from 'react';
-import { Text, ImageBackground, View, TouchableOpacity } from 'react-native';
+import { Text, ImageBackground, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const PromotionCard = ({ url, text, dis, date }) => (
-  <TouchableOpacity style={styles.CardView}>
-    <View>
-      {/* // <Card style={styles.CategorieImagePro}>
+  <View style={styles.CardView}>
+    {/* // <Card style={styles.CategorieImagePro}>
       //   <Text style={styles.PromoText}>{text}</Text>
       //   <View style={styles.user}>
       //     <Image source={{ uri: url }} />
       //     <Text style={styles.name}>{discription}</Text>
       //   </View>
       // </Card>  */}
-      <ImageBackground
-        style={styles.CategorieImagePro}
-        source={{
-          uri: url,
-        }}
-      >
-        <Text style={styles.PromoText}>Promotion</Text>
-      </ImageBackground>
-      <View style={styles.TextBox}>
-        <View>
-          <Text style={styles.Text}> {text}</Text>
-          <Text style={styles.DisStyle}>{dis}</Text>
-        </View>
-        <View style={{ flexDirection: 'row', flex: 1, margin: 4 }}>
-          <Icon name="md-stopwatch" size={20} color="#252525" />
-          <Text style={{ margin: 4, color: '#64646A' }}>{date}</Text>
-        </View>
+    <ImageBackground
+      style={styles.CategorieImagePro}
+      source={{
+        uri: url,
+      }}
+    >
+      <Text style={styles.PromoText}>Promotion</Text>
+    </ImageBackground>
+    <View style={styles.TextBox}>
+      <View>
+        <Text style={styles.Text}> {text}</Text>
+        <Text style={styles.DisStyle}>{dis}</Text>
+      </View>
+      <View style={{ flexDirection: 'row', flex: 1, margin: 4 }}>
+        <Icon name="md-stopwatch" size={20} color="#252525" />
+        <Text style={{ margin: 4, color: '#64646A' }}>{date}</Text>
       </View>
     </View>
-  </TouchableOpacity>
+  </View>
 );
 
 export default PromotionCard;

@@ -3,6 +3,8 @@ import HomeScreen from './routerStack/HomeRoute';
 import StoreFrontScreen from '../components/StoreFront';
 import ListScreen from './routerStack/ListRoute';
 import MapScreen from './routerStack/MapRoute';
+import PromotionScreen from '../components/PromotionFrontI';
+import PromotionScreenII from '../components/PromotionFrontII';
 
 const HomeRouter = createStackNavigator(
   {
@@ -17,6 +19,12 @@ const HomeRouter = createStackNavigator(
     },
     Map: {
       screen: MapScreen,
+    },
+    Promotion: {
+      screen: PromotionScreen,
+    },
+    PromotionI: {
+      screen: PromotionScreenII,
     },
   },
   {
