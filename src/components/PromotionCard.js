@@ -58,7 +58,7 @@ const styles = {
   },
   TextBox: {
     width: 180,
-    height: 100,
+    height: 110,
     backgroundColor: 'white',
   },
   Text: {
@@ -70,6 +70,6 @@ const styles = {
   DisStyle: {
     color: '#6A6A6A',
     fontWeight: 'bold',
-    marginLeft: 4,
+    margin: 4,
   },
 };

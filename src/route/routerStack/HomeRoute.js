@@ -112,17 +112,17 @@ class HomeRoute extends React.Component {
             <View style={{ flexDirection: 'row' }}>
               <TouchableOpacity onPress={() => this.onClickPromotionI()}>
                 <PromotionCard
-                  text="Promotion"
+                  text="Suit Discount"
                   url="https://api.thaimarket.guide/images/service/download/5bfb6e138882f90001d19bd4?"
-                  dis="Test "
+                  dis="Order a complete suits from the original prize of 4400฿ (2900+1500)... "
                   date="17 Jan - 17 Dec 2019"
                 />
               </TouchableOpacity>
               <TouchableOpacity onPress={() => this.onClickPromotionII()}>
                 <PromotionCard
-                  text="Promotion"
+                  text="Buy 3 get 1 free"
                   url="https://api.thaimarket.guide/images/service/download/5c2064fb70967d0001a9ba41?"
-                  dis="Test"
+                  dis="For every purchase of 3 tea (include any tea that coast over 50฿)...  "
                   date="02 Feb - 19 Jun 2020"
                 />
               </TouchableOpacity>
