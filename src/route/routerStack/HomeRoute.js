@@ -17,7 +17,6 @@ import CategoriesCard from '../../components/CategoriesCard';
 class HomeRoute extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       stores: [],
     };
@@ -103,11 +102,6 @@ class HomeRoute extends React.Component {
               }}
             >
               <Title>Promotions</Title>
-              <TouchableOpacity
-                style={{ justifyContent: 'center', alignContent: 'flex-end' }}
-              >
-                <Text style={{ color: 'purple', fontSize: 17 }}>See All></Text>
-              </TouchableOpacity>
             </View>
             <View style={{ flexDirection: 'row' }}>
               <TouchableOpacity onPress={() => this.onClickPromotionI()}>

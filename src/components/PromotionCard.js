@@ -4,13 +4,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const PromotionCard = ({ url, text, dis, date }) => (
   <View style={styles.CardView}>
-    {/* // <Card style={styles.CategorieImagePro}>
-      //   <Text style={styles.PromoText}>{text}</Text>
-      //   <View style={styles.user}>
-      //     <Image source={{ uri: url }} />
-      //     <Text style={styles.name}>{discription}</Text>
-      //   </View>
-      // </Card>  */}
     <ImageBackground
       style={styles.CategorieImagePro}
       source={{

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
+import { View, ImageBackground, Dimensions, TouchableOpacity, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/SimpleLineIcons';
 import Iconed from 'react-native-vector-icons/MaterialCommunityIcons';
+import Overlay from 'react-native-modal-overlay';
 import ImageZoom from 'react-native-image-pan-zoom';
 import axios from 'axios';
 import HeadBanner from '../../components/HeadBanner';
@@ -10,10 +11,21 @@ import HeadBanner from '../../components/HeadBanner';
 const realImg = require('../../resource/images/Real.png');
 
 class UserRoute extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showOverlay: false,
+    };
+  }
   componentWillMount() {
     this.getStoreFront();
     console.disableYellowBox = true;
   }
+  onClose = () => {
+    this.setState({
+      showOverlay: false,
+    });
+  };
 
   async getStoreFront() {
     await axios
@@ -24,9 +36,18 @@ class UserRoute extends Component {
         }));
       });
   }
+
   render() {
+    console.log(this.state.showOverlay);
     return (
       <View>
+        <Overlay
+          onClose={this.onClose}
+          closeOnTouchOutside
+          visible={this.state.showOverlay}
+        >
+          <Text>test</Text>
+        </Overlay>
         <View>
           <HeadBanner
             headerText={'Map'}
@@ -58,6 +79,11 @@ class UserRoute extends Component {
                   <View>
                     {/* shop 1 */}
                     <TouchableOpacity
+                      onPress={() =>
+                        this.setState({
+                          showOverlay: true,
+                        })
+                      }
                       style={[styles.store, { marginTop: -32, marginLeft: 78 }]}
                     >
                       <Icon name={'store'} size={20} color="white" />
