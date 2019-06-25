@@ -6,18 +6,18 @@ import StoreHead from './StoreHead';
 import NavTabs from './NavTabs';
 
 const StoreFront = ({ navigation }) => {
-  const shopName = navigation.getParam('shopName');
+  const shopdata = navigation.getParam('storesData');
   return (
     <View>
       <View>
         <StoreHead
-          headerText={shopName}
+          headerText={shopdata.lang.en.name}
           onClickBack={() => {
             navigation.goBack();
           }}
         />
       </View>
-      <NavTabs />
+      <NavTabs shopDetail={shopdata} />
       {/* <View>
       <AirbnbRating />
     </View> */}

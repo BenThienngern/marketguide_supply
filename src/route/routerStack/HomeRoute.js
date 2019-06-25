@@ -26,9 +26,9 @@ class HomeRoute extends React.Component {
     this.getStoreFront();
     console.disableYellowBox = true;
   }
-  onClickRecomendShop = (name) => {
-    console.log(name);
-    this.props.navigation.navigate('StoreFont', { shopName: name });
+  onClickRecomendShop = (data) => {
+    console.log(data);
+    this.props.navigation.navigate('StoreFont', { storesData: data });
   };
   onClickSeeAll = () => {
     this.props.navigation.navigate('List');
@@ -151,7 +151,7 @@ class HomeRoute extends React.Component {
                   ? this.state.stores.map((data) => (
                       <ListView
                         key={data.id}
-                        onClick={() => this.onClickRecomendShop(data.lang.en.name)}
+                        onClick={() => this.onClickRecomendShop(data)}
                         text={data.lang.en.name}
                         url={data.image}
                       />
